@@ -1,0 +1,36 @@
+<p>
+  <b>Short:</b>
+  <%=h @task.short %>
+</p>
+
+<p>
+  <b>Task:</b>
+  <%=h @task.task %>
+</p>
+<p>
+	<b>Project:</b>
+	<%=h @task.project.name %>
+</p>
+<p>
+	<b>Created:</b>
+	<%=h @task.created_at.strftime("%H:%M %d-%m-%Y") %>
+</p>
+<% if @task.complete %>
+	<p>
+		<b>Done:</b>
+		<%=h @task.updated_at.strftime("%H:%M %d-%m-%Y") %>
+	</p>
+<% end %>
+<p>
+	<b>Priority:</b>
+	<%=h ENV[@task.priority.to_s] %>
+  </p>
+<p>
+  <b>Complete:</b>
+  <%=h @task.complete %>
+</p>
+
+<%= link_to '<< Back', tasks_path(:complete => @task.complete) %>
+<% if !@task.complete %>
+	| <%= link_to 'Edit >>', edit_task_path(@task) %>
+<% end %>

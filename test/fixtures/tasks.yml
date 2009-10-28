@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  short: MyString
+  task: MyString
+  complete: false
+
+two:
+  short: MyString
+  task: MyString
+  complete: false
